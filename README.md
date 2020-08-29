@@ -3,7 +3,7 @@ Studi kasus API Toko Buku Online
 
 Bootcamp [Sanbercode](http://sanbercode.com/) Kelas Laravel Lanjutan
 
-##Demo##
+## Demo
 
 ---
 #### Register User
