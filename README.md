@@ -20,7 +20,7 @@ Bootcamp [Sanbercode](http://sanbercode.com/) Kelas Laravel Lanjutan
 _note : jika role tidak diisi akan diset defaultnya guest_  
 **Route Api**
 <pre>
-api/register
+/api/register
 </pre>
 
 ## Login
@@ -34,12 +34,12 @@ api/register
 ```
 **Route Api**
 <pre>
-api/login
+/api/login
 </pre>
 
 ## Logout
 _Use Bearer Token for Authorization_  
 **Route Api**
 <pre>
-api/logout
+/api/logout
 </pre>  
