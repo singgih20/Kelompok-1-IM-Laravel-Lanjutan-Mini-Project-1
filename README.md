@@ -9,9 +9,9 @@ Bootcamp [Sanbercode](http://sanbercode.com/) Kelas Laravel Lanjutan
 **Post Data**
 ```json
 {
-    "name": "Dedi Ananto",
-    "username": "dediananto",
-    "phone": "085866690661",
+    "name": "John Doe",
+    "username": "john2020",
+    "phone": "08123456789",
     "password": "123456",
     "roles": "admin"
 }
