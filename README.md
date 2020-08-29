@@ -3,9 +3,8 @@ Studi kasus API Toko Buku Online
 
 Bootcamp [Sanbercode](http://sanbercode.com/) Kelas Laravel Lanjutan
 
-## Demo
 ---
-#### Register User
+## Register User
 
 **Post Data**
 ```json
@@ -24,8 +23,7 @@ _note : jika role tidak diisi akan diset defaultnya guest_
 api/register
 </pre>
 
----
-### Login
+## Login
 **Post Data**
 ```json
 {
@@ -39,11 +37,9 @@ api/register
 api/login
 </pre>
 
----
-### Logout
+## Logout
 _Use Bearer Token for Authorization_  
 **Route Api**
 <pre>
 api/logout
 </pre>  
----
