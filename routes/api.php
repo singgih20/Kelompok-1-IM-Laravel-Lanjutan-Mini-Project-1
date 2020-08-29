@@ -16,4 +16,14 @@ Route::namespace('Auth')->group(function(){
     Route::post('register', 'RegisterController');
     Route::post('login', 'LoginController');
     Route::post('logout', 'LogoutController');
+
+    Route::middleware('auth:api')->group(function(){
+        Route::get('user', function (Request $request) {
+            return $request->user();
+        });
+        
+        Route::middleware('admin')->group(function(){
+            // route ke book controller
+        });
+    });
 });
