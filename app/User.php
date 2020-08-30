@@ -17,7 +17,7 @@ class User extends Authenticatable implements JWTSubject
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'username', 'phone', 'address', 'roles'
+        'name', 'username', 'address', 'phone', 'password'
     ];
 
     /**
@@ -63,7 +63,13 @@ class User extends Authenticatable implements JWTSubject
         return [];
     }
 
-    public function userRole(){
+    public function userRole()
+    {
         return $this->roles;
+    }
+
+    public function getRouteKeyName()
+    {
+        return 'id';
     }
 }

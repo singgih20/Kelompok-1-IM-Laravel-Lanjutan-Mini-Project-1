@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 
 /*
@@ -20,9 +21,9 @@ Route::namespace('Auth')->group(function () {
 });
 
 Route::middleware('auth:api')->group(function () {
-    Route::get('user', function (Request $request) {
-        return $request->user();
-    });
+    Route::get('user', 'UserController@show');
+    Route::patch('user/{user}', 'UserController@update');
+    Route::patch('ubahStatus/{user}', 'UserController@ubahStatus')->middleware('admin');
 
     Route::middleware('admin')->group(function () {
         Route::post('create-new-book', 'BookController@store');
