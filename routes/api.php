@@ -12,19 +12,24 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::namespace('Auth')->group(function(){
+
+Route::namespace('Auth')->group(function () {
     Route::post('register', 'RegisterController');
     Route::post('login', 'LoginController');
     Route::post('logout', 'LogoutController');
-
 });
 
-Route::middleware('auth:api')->group(function(){
+Route::middleware('auth:api')->group(function () {
     Route::get('user', function (Request $request) {
         return $request->user();
     });
-    
-    Route::middleware('admin')->group(function(){
-        // route ke book controller
+
+    Route::middleware('admin')->group(function () {
+        Route::post('create-new-book', 'BookController@store');
+        Route::patch('update-book/{book}', 'BookController@update');
+        Route::delete('delete-book/{book}', 'BookController@destroy');
     });
 });
+// dapat diakses tanpa login
+Route::get('book', 'BookController@index');
+Route::get('book/{book}', 'BookController@show');
