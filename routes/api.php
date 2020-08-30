@@ -31,7 +31,9 @@ Route::middleware('auth:api')->group(function () {
         Route::delete('delete-book/{book}', 'BookController@destroy');
 
     });
+    Route::post('order', 'OrderController@store');
     Route::patch('update-status/{order}', 'OrderController@update');
+    Route::get('history', 'OrderController@index');
 });
 // dapat diakses tanpa login
 Route::get('book', 'BookController@index');

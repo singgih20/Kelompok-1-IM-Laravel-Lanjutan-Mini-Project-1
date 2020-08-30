@@ -27,8 +27,7 @@ class RegisterRequest extends FormRequest
             'name' => ['string', 'required'],
             'username' => ['alpha_num', 'required', 'min:4', 'max:25', 'unique:users,username'],
             'phone' => ['string', 'required', 'unique:users,phone'],
-            'password' => ['alpha_num', 'min:6'],
-            'roles' => ['string', 'required']
+            'password' => ['alpha_num', 'min:6']
         ];
     }
 }
