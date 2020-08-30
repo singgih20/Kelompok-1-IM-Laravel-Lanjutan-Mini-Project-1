@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Book;
 use App\Order;
+use App\Http\Resources\OrderResource;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -17,7 +18,13 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
+        $getrole = Auth::user()->roles; 
+        if ($getrole == 'admin') {
+            $orders = Order::all();
+        } else {
+            $orders = Order::where('user_id', Auth::user()->id)->get();
+        }
+        return OrderResource::collection($orders);
     }
 
     /**
