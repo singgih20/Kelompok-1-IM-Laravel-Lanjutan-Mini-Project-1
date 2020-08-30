@@ -74,9 +74,45 @@ class OrderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Order $order)
     {
-        $role = Auth::user()->roles;
+        $getrole = Auth::user()->roles; 
+        $action = strtoupper(request('action'));
+        // status order 'SUBMIT', 'PROCESS', 'FINISH', 'CANCEL'
+
+        // rules
+        // 1. aksi untuk update status order hanya PROCESS, FINISH & CANCEL
+        if(!in_array($action,['PROCESS', 'FINISH', 'CANCEL'])){
+            // sebenarnya sudah dibatasi dari tipe data di table menggunakan enum
+            return response()->json(['message'=>'Aksi tidak dikenali'], 400);
+        }
+        // 2. hanya admin yang bisa merubah jadi process
+        if ($getrole != 'admin' && $action == "PROCESS") {
+            return response()->json(['message'=>'Anda tidak diijinkan melakukan aksi PROCESS'], 401);
+        }
+        // 3. syarat order di cancel hanya jika statusnya masih SUBMIT
+        if($action=='CANCEL' && $order->status=='SUBMIT') {
+            $qty  = $order->quantity;
+            $book_id  = $order->book_id;
+            // kembalikan stock jika order di cancel
+            $updateQty = Book::find($book_id)->first();
+            $updateQty->stock = $updateQty->stock + $qty;
+            $updateQty->save();
+
+            $order->update([
+                "status" => $action
+            ]);
+            return response()->json(['message'=>'Order '.$order->invoice_number.' Berhasil di cancel'], 200);
+        } 
+        // 4. hirarki syarat rubah status process jika awalnya submit, rubah finish jika awalnya sudah di process
+        if(($action=='PROCESS' && $order->status=='SUBMIT') || ($action=='FINISH' && $order->status=='PROCESS')) {
+            $order->update([
+                "status" => $action
+            ]);
+            return response()->json(['message'=>'Order '.$order->invoice_number.' Berhasil di '.strtolower($action)], 200);
+        } else {
+            return response()->json(['message'=>'Terjadi kesalahan dalam perubahan status order Anda'], 406);
+        }
     }
 
     /**
