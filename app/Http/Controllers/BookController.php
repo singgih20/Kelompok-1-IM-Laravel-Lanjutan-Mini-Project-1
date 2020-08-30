@@ -37,7 +37,7 @@ class BookController extends Controller
             'publisher' => request('publisher'),
             'price' => request('price'),
             'stock' => request('stock'),
-            'created_by' => Auth::user()->name
+            'created_by' => Auth::user()->id
         ]);
 
         return response()->json(['status' => 'success', 'data' => $book]);

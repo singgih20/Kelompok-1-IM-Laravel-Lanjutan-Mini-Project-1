@@ -29,6 +29,8 @@ Route::middleware('auth:api')->group(function () {
         Route::post('create-new-book', 'BookController@store');
         Route::patch('update-book/{book}', 'BookController@update');
         Route::delete('delete-book/{book}', 'BookController@destroy');
+
+        Route::patch('update-status/{order}', 'OrderController@update');
     });
 });
 // dapat diakses tanpa login

@@ -14,7 +14,7 @@ Bootcamp [Sanbercode](http://sanbercode.com/) Kelas Laravel Lanjutan
 ---
 ## Register User
 
-**Post Data**
+**Create User**
 ```json
 {
     "name": "John Doe",
@@ -26,35 +26,31 @@ Bootcamp [Sanbercode](http://sanbercode.com/) Kelas Laravel Lanjutan
 
 ```
 _note : jika role tidak diisi akan diset defaultnya guest_  
-**Route Api**
 <pre>
-/api/register
+post /api/register
 </pre>
 
 ## Login
-**Post Data**
 ```json
 {
-    "username": "dediananto",
+    "username": "john2020",
     "password": "123456"
 }
 
 ```
-**Route Api**
 <pre>
-/api/login
+post /api/login
 </pre>
 
 ## Logout
 _Use Bearer Token for Authorization_  
-**Route Api**
 <pre>
-/api/logout
+post /api/logout
 </pre>  
 
 ## Insert Books
 <pre>
-/api/create-new-book
+post /api/create-new-book
 </pre>
 
 **Create Data**
@@ -64,7 +60,7 @@ _Use Bearer Token for Authorization_
     "description": "contoh description",
     "author": "Contoh author",
     "publisher": "contoh publisher",
-    "price" : 5.500,
+    "price" : 5500,
     "stock" : 4
     
 }
