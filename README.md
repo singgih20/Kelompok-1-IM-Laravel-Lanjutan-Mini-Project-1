@@ -114,3 +114,9 @@ post /api/order
 <pre>
 patch /api/update-status/INV-0820-5f4b95db6fcae
 </pre>
+
+## history order
+<pre>
+get /api/history
+</pre>  
+_admin akan memunculkan semua history, untuk user biasa hanya akan muncul history dia sendiri_  
