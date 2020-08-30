@@ -23,11 +23,13 @@ Route::middleware('auth:api')->group(function () {
     Route::get('user', function (Request $request) {
         return $request->user();
     });
-
+    Route::post('order', 'OrderController@store');
     Route::middleware('admin')->group(function () {
         Route::post('create-new-book', 'BookController@store');
         Route::patch('update-book/{book}', 'BookController@update');
         Route::delete('delete-book/{book}', 'BookController@destroy');
+
+        Route::patch('update-status/{order}', 'OrderController@update');
     });
 });
 // dapat diakses tanpa login
