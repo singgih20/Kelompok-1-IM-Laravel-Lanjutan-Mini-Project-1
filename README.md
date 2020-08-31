@@ -1,6 +1,8 @@
 # Kelompok 1 Mini Project 1  
 Studi kasus API Toko Buku Online  
 
+Untuk video penjelasan code dapat mengakses https://youtu.be/izbZkPJlITw
+
 Bootcamp [Sanbercode](http://sanbercode.com/) Kelas Laravel Lanjutan
 
 #To do list setelah clone project
