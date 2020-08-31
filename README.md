@@ -1,7 +1,7 @@
 # Kelompok 1 Mini Project 1  
 Studi kasus API Toko Buku Online  
 
-video [penjelasan code](https://youtu.be/izbZkPJlITw) dapat mengakses https://youtu.be/izbZkPJlITw
+video [penjelasan code](https://youtu.be/izbZkPJlITw) dapat mengakses https://youtu.be/izbZkPJlITw  
 video [demo](https://youtu.be/UTKMMBp5mg4) api dapat diakses https://youtu.be/UTKMMBp5mg4
 
 Bootcamp [Sanbercode](http://sanbercode.com/) Kelas Laravel Lanjutan
