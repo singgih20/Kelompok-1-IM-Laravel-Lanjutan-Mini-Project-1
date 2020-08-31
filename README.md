@@ -1,7 +1,8 @@
 # Kelompok 1 Mini Project 1  
 Studi kasus API Toko Buku Online  
 
-Untuk video penjelasan code dapat mengakses https://youtu.be/izbZkPJlITw
+video [penjelasan code](https://youtu.be/izbZkPJlITw) dapat mengakses https://youtu.be/izbZkPJlITw
+video [demo](https://youtu.be/UTKMMBp5mg4) api dapat diakses https://youtu.be/UTKMMBp5mg4
 
 Bootcamp [Sanbercode](http://sanbercode.com/) Kelas Laravel Lanjutan
 
@@ -11,7 +12,7 @@ Bootcamp [Sanbercode](http://sanbercode.com/) Kelas Laravel Lanjutan
 3. php artisan jwt:secret
 4. php artisan cache:clear
 5. php artisan config:clear
-6. php artisan migrate:refresh (karena saya ada beberapa table yang saya ubah kolomnya).
+6. php artisan migrate
 
 ---
 ## Register User
