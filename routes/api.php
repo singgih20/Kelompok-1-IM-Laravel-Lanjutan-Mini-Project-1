@@ -29,11 +29,6 @@ Route::middleware('auth:api')->group(function () {
         Route::post('create-new-book', 'BookController@store');
         Route::patch('update-book/{book}', 'BookController@update');
         Route::delete('delete-book/{book}', 'BookController@destroy');
-<<<<<<< HEAD
-        Route::patch('update-status/{order}', 'OrderController@update');
-=======
-
->>>>>>> 8d69a2ff50e7f376d88b19d6fb9426cc13954d49
     });
     Route::post('order', 'OrderController@store');
     Route::patch('update-status/{order}', 'OrderController@update');
