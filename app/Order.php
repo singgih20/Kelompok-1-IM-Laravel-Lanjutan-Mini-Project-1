@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Order extends Model
 {
     protected $guarded = [];
+    public function getRouteKeyName()
+    {
+        return 'invoice_number';
+    }
     public function user()
     {
         return $this->belongsTo('App\User');
@@ -15,6 +19,6 @@ class Order extends Model
 
     public function books()
     {
-        return $this->belongsToMany('App\Book');
+        return $this->belongsTo('App\Book', 'book_id', 'id');
     }
 }

@@ -87,3 +87,36 @@ patch /api/update-book/1
 <pre>
 delete /api/delete-book/1
 </pre>
+
+## order book
+
+**order data**  
+```json
+{
+    "book_id": 1,
+    "quantity": 2
+}
+```
+
+<pre>
+post /api/order
+</pre>
+
+## update status order berdasarkan invoice number
+
+**status order**  
+```json
+{
+    "action": "PROCESS"
+}
+```
+
+<pre>
+patch /api/update-status/INV-0820-5f4b95db6fcae
+</pre>
+
+## history order
+<pre>
+get /api/history
+</pre>  
+_admin akan memunculkan semua history, untuk user biasa hanya akan muncul history dia sendiri_  
