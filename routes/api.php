@@ -23,13 +23,12 @@ Route::namespace('Auth')->group(function () {
 Route::middleware('auth:api')->group(function () {
     Route::get('user', 'UserController@show');
     Route::patch('user/{user}', 'UserController@update');
-    Route::patch('ubahStatus/{user}', 'UserController@ubahStatus')->middleware('admin');
+    Route::patch('ubah-status/{user}', 'UserController@ubahStatus')->middleware('admin');
 
     Route::middleware('admin')->group(function () {
         Route::post('create-new-book', 'BookController@store');
         Route::patch('update-book/{book}', 'BookController@update');
         Route::delete('delete-book/{book}', 'BookController@destroy');
-
         Route::patch('update-status/{order}', 'OrderController@update');
     });
 });
